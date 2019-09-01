@@ -3,7 +3,14 @@
 /* Question 1 : Write a PHP script to display names and the salaries amounts, within a table. ou should use `echo ` to generate your table. */
 //////////////////////// Your Code Here /////////////////////
 
+echo "<table>
 
+<tr><td>Salary For Mr.Ais</td><td>200$</td></tr>
+<tr><td>Salary For Mr.B</td><td>700$</td></tr>
+
+
+
+</table>";
 
 
 
@@ -17,6 +24,19 @@ $countries = array( "Italy"=>"Rome",
                "Finland"=>"Helsinki",
                "France" => "Paris",
                "Slovakia"=>"Bratislava" ) ;
+
+               sort($countries);
+
+
+               echo "<ul>";
+               foreach($countries as $country)
+               {
+                   echo "<li> $country </li>";
+                 
+                  
+               }
+
+               echo "</ul>";
 
 /*Question 3 : Write a script to build the following stars pattern, using a nested for loop.
 
@@ -33,9 +53,86 @@ $countries = array( "Italy"=>"Rome",
 
 */
 
-/*Question 4 : Write a PHP script to calculate the difference between two dates.
-Input : 1981-11-04, 2013-09-04
-Output : 31 years, 10 months, 11 days
+$counter = 1;
+for ($i=1; $i <=10 ; $i++) { 
+    
+
+    
+    if($i >= (10/2)+1)
+    {
+        
+        
+
+            for ($j=$i; $j <=10 ; $j++) { 
+                echo "*";
+                
+            
+        
+            
+        }
+        echo "<br/>";
+    
+   
+
+    
+        
+     
+        
+
+    }
+    else{
+
+    for ($j=1; $j <= $i; $j++) { 
+        echo"*";
+      
+    }
+    echo "<br/>";
+   
+
+}
+   
+}
 
 
-/*Question 5 : Create a simple HTML form that accept the user name after submitting display the name using PHP echo statement under the form. */
+$firstdate =  "1981-11-04";
+$seconddate = "2013-09-04";
+
+$fd = array();
+$word = "";
+for ($i=0; $i <strlen($firstdate); $i++) { 
+    
+    if($firstdate[$i]!=='-')
+    {
+        $word+=$firstdate[$i];
+        }
+        else
+        {
+            array_push($fd , $word);
+            $word = "";
+
+        }
+
+    
+}
+
+echo $word[0];
+
+
+
+
+
+echo "<form>
+
+<input type=text />
+<input type=submit />
+
+
+
+
+
+
+
+</form>";
+
+
+?>
